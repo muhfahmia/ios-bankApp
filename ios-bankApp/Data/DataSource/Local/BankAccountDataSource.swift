@@ -10,27 +10,26 @@ import Combine
 
 protocol BankAccountDataSource {
     func addAccount() -> Future<Bool, Error>
-    func getAccount() -> Future<BankAccount, Error>
+    func getAccount() -> Future<BankAccountModel, Error>
 }
 
 struct DefaultBankAccountDataSource: BankAccountDataSource {
     
+    private let realm: Realm?
     
-    private let realm: Realm
-    
-    init(realm: Realm) {
+    init(realm: Realm?) {
         self.realm = realm
     }
     
     func addAccount() -> Future<Bool, Error> {
         return Future<Bool, Error> { promise in
-            let myAccount = BankAccountModelObject()
+            let myAccount = BankAccountModel()
             myAccount.accountNumber = "123456789"
             myAccount.accountName = "Fahmi"
             myAccount.accountBalance = 10000000
             do {
-                try realm.write {
-                    realm.add(myAccount)
+                try realm?.write {
+                    realm?.add(myAccount)
                 }
                 promise(.success(true))
             } catch {
@@ -39,14 +38,15 @@ struct DefaultBankAccountDataSource: BankAccountDataSource {
         }
     }
     
-    func getAccount() -> Future<BankAccount, Error> {
-        return Future<BankAccount, Error> { promise in
-            let account = realm.objects(BankAccountModelObject.self)
-            
-            if account.isEmpty {
-                promise(.failure(ErrorDescription.invalidRealm))
-            } else {
-                promise(.success(account as! BankAccount))
+    func getAccount() -> Future<BankAccountModel, Error> {
+        return Future<BankAccountModel, Error> { promise in
+            if let realm = self.realm {
+                let account = realm.objects(BankAccountModel.self)
+                if account.isEmpty {
+                    promise(.failure(ErrorDescription.invalidRealm))
+                } else {
+                    promise(.success(account.first!))
+                }
             }
         }
     }

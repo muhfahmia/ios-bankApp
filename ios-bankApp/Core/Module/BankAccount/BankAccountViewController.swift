@@ -8,17 +8,17 @@
 import UIKit
 import RealmSwift
 
-protocol BankAccountOutput {
+class BankAccountViewController: UIViewController, BankAccountPresenterToView, UITableViewDataSource, UITableViewDelegate {
     
-}
-
-class BankAccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tblView: UITableView!
     
     enum TableSection: Int, CaseIterable {
         case balanceCell
     }
+    
+    var presenter: BankAccountViewToPresenter?
+    var bankAccount: BankAccount?
     
     init() {
         super.init(nibName: String(describing: BankAccountViewController.self), bundle: nil)
@@ -31,6 +31,7 @@ class BankAccountViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +46,11 @@ class BankAccountViewController: UIViewController, UITableViewDataSource, UITabl
         tblView.register(nibWithCellClass: BalanceTableViewCell.self)
     }
     
+    func onFetchSuccess(with account: BankAccount) {
+        bankAccount = account
+        tblView.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         TableSection.allCases.count
     }
@@ -54,8 +60,20 @@ class BankAccountViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: BalanceTableViewCell = tableView.dequeueReusableCell(withClass: BalanceTableViewCell.self)
-        return cell
+        let section = TableSection(rawValue: indexPath.section)
+        switch section {
+        case .balanceCell:
+            let cell: BalanceTableViewCell = tableView.dequeueReusableCell(withClass: BalanceTableViewCell.self)
+            let balance = String().rupiahFormat(from: bankAccount?.accountBalance ?? 0)
+            cell.accountBalance.text = balance
+            cell.doPaymentClick = { [weak self] in
+                let vc = PaymentViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
+            return cell
+        case .none:
+            return UITableViewCell()
+        }
     }
     
 }

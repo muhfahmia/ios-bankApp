@@ -7,6 +7,30 @@
 
 import Foundation
 
-class BankAccountPresenter {
+class BankAccountPresenter: BankAccountViewToPresenter {
+    
+    var view: BankAccountPresenterToView?
+    var interactor: BankAccountPresenterToInteractor?
+    var router: BankAccountRouter?
+    
+    func viewDidLoad() {
+        interactor?.getBankAccount()
+    }
+    
+    func didSelectRowAt() {
+        
+    }
+    
+}
+
+extension BankAccountPresenter: BankAccountInteractorToPresenter {
+    func fetchBankAccountSuccess(with account: BankAccount) {
+        view?.onFetchSuccess(with: account)
+    }
+    
+    func fetchBankAccountFailure(with error: String) {
+        print("error from presenter \(error)")
+    }
+    
     
 }

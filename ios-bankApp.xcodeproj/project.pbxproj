@@ -10,6 +10,9 @@
 		5D2668E02B0211B700DA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2668DF2B0211B700DA51BC /* AppDelegate.swift */; };
 		5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668E82B0211B800DA51BC /* Assets.xcassets */; };
 		5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */; };
+		5DDD72F62B0293DA00FA3A85 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD72F52B0293DA00FA3A85 /* Constant.swift */; };
+		5DDD72F82B02957100FA3A85 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDD72F72B02957100FA3A85 /* PaymentViewController.swift */; };
+		5DDD72FB2B02958800FA3A85 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD72FA2B02958800FA3A85 /* PaymentViewController.xib */; };
 		5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5592B0216C900D1A2AC /* AppInjection.swift */; };
 		5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */; };
 		5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */; };
@@ -31,6 +34,7 @@
 		5DFFF58C2B0258EB00D1A2AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF58B2B0258EB00D1A2AC /* String.swift */; };
 		5DFFF58E2B025CE300D1A2AC /* BankAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF58D2B025CE300D1A2AC /* BankAccountRepository.swift */; };
 		5DFFF5932B025F7100D1A2AC /* BankAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */; };
+		5DFFF5952B0260EB00D1A2AC /* BankAccountContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5942B0260EB00D1A2AC /* BankAccountContract.swift */; };
 		72C4DA4B44A05CB440277F0D /* Pods_ios_bankApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736CB4DAEC377834EDFAB3DB /* Pods_ios_bankApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,9 @@
 		5D2668E82B0211B800DA51BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D2668EB2B0211B800DA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D2668ED2B0211B800DA51BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDD72F52B0293DA00FA3A85 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5DDD72F72B02957100FA3A85 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		5DDD72FA2B02958800FA3A85 /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
 		5DFFF5592B0216C900D1A2AC /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
 		5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRouter.swift; sourceTree = "<group>"; };
 		5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +69,7 @@
 		5DFFF58B2B0258EB00D1A2AC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5DFFF58D2B025CE300D1A2AC /* BankAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRepository.swift; sourceTree = "<group>"; };
 		5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUseCase.swift; sourceTree = "<group>"; };
+		5DFFF5942B0260EB00D1A2AC /* BankAccountContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountContract.swift; sourceTree = "<group>"; };
 		736CB4DAEC377834EDFAB3DB /* Pods_ios_bankApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_bankApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3251A3F5DC6FF2C039A165E /* Pods-ios-bankApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-bankApp.release.xcconfig"; path = "Target Support Files/Pods-ios-bankApp/Pods-ios-bankApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +116,41 @@
 			path = "ios-bankApp";
 			sourceTree = "<group>";
 		};
+		5DDD72F22B02927700FA3A85 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				5DDD72F92B02957B00FA3A85 /* View */,
+				5DDD72F72B02957100FA3A85 /* PaymentViewController.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		5DDD72F32B0293BF00FA3A85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5662B021BB800D1A2AC /* UIColor.swift */,
+				5DFFF5842B0254B300D1A2AC /* UITableView.swift */,
+				5DFFF58B2B0258EB00D1A2AC /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5DDD72F42B0293D200FA3A85 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				5DDD72F52B0293DA00FA3A85 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		5DDD72F92B02957B00FA3A85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DDD72FA2B02958800FA3A85 /* PaymentViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5DFFF54C2B02152200D1A2AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,9 +184,8 @@
 		5DFFF54F2B02153800D1A2AC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5DFFF5662B021BB800D1A2AC /* UIColor.swift */,
-				5DFFF5842B0254B300D1A2AC /* UITableView.swift */,
-				5DFFF58B2B0258EB00D1A2AC /* String.swift */,
+				5DDD72F42B0293D200FA3A85 /* Constant */,
+				5DDD72F32B0293BF00FA3A85 /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,6 +195,7 @@
 			children = (
 				5DFFF5632B021A9600D1A2AC /* TabBar */,
 				5DFFF5532B02156300D1A2AC /* BankAccount */,
+				5DDD72F22B02927700FA3A85 /* Payment */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -185,6 +228,7 @@
 				5DFFF55F2B02176000D1A2AC /* BankAccountPresenter.swift */,
 				5DFFF56A2B021FDA00D1A2AC /* BankAccountEntity.swift */,
 				5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */,
+				5DFFF5942B0260EB00D1A2AC /* BankAccountContract.swift */,
 			);
 			path = BankAccount;
 			sourceTree = "<group>";
@@ -267,9 +311,17 @@
 		5DFFF58F2B025F5400D1A2AC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */,
+				5DFFF5962B0281B100D1A2AC /* BankAccount */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		5DFFF5962B0281B100D1A2AC /* BankAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */,
+			);
+			path = BankAccount;
 			sourceTree = "<group>";
 		};
 		7D88F01659CA673B554590E6 /* Frameworks */ = {
@@ -352,6 +404,7 @@
 				5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */,
 				5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */,
 				5DFFF58A2B02562600D1A2AC /* BalanceTableViewCell.xib in Resources */,
+				5DDD72FB2B02958800FA3A85 /* PaymentViewController.xib in Resources */,
 				5DFFF5692B021DF400D1A2AC /* BankAccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +463,7 @@
 				5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */,
 				5DFFF56D2B02208C00D1A2AC /* BankAccountInjection.swift in Sources */,
 				5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */,
+				5DFFF5952B0260EB00D1A2AC /* BankAccountContract.swift in Sources */,
 				5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */,
 				5DFFF5622B0217C500D1A2AC /* HomeInjection.swift in Sources */,
 				5DFFF5672B021BB800D1A2AC /* UIColor.swift in Sources */,
@@ -423,8 +477,10 @@
 				5D2668E02B0211B700DA51BC /* AppDelegate.swift in Sources */,
 				5DFFF56B2B021FDA00D1A2AC /* BankAccountEntity.swift in Sources */,
 				5DFFF5852B0254B300D1A2AC /* UITableView.swift in Sources */,
+				5DDD72F62B0293DA00FA3A85 /* Constant.swift in Sources */,
 				5DFFF5652B021ACB00D1A2AC /* HomeTabBarController.swift in Sources */,
 				5DFFF5812B022C8600D1A2AC /* BankAccountModel.swift in Sources */,
+				5DDD72F82B02957100FA3A85 /* PaymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

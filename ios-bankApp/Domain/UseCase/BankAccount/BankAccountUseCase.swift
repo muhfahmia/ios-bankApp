@@ -7,4 +7,5 @@
 
 protocol BankAccountUseCase {
     func getAccount()
+    func addAccount()
 }

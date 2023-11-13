@@ -8,7 +8,7 @@
 import Foundation
 
 protocol BankAccount {
-    var accountID: String? { get }
+    var accountID: String { get }
     var accountNumber: String? { get }
     var accountName: String? { get }
     var accountBalance: Double? { get }

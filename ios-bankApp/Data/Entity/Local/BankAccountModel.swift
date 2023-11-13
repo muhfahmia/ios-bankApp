@@ -7,8 +7,8 @@
 
 import RealmSwift
 
-class BankAccountModelObject: Object, BankAccount {
-    @Persisted(primaryKey: true) var accountID: String? = UUID().uuidString
+class BankAccountModel: Object, BankAccount {
+    @Persisted(primaryKey: true) var accountID: String = UUID().uuidString
     @Persisted var accountNumber: String?
     @Persisted var accountName: String?
     @Persisted var accountBalance: Double?
@@ -16,4 +16,7 @@ class BankAccountModelObject: Object, BankAccount {
     override class func primaryKey() -> String? {
         return "accountID"
     }
+    
+    
+    
 }

@@ -8,7 +8,8 @@
 import Combine
 
 protocol BankAccountRepository {
-    func getAccount() -> Future<BankAccount, Error>
+    func getAccount() -> Future<BankAccountModel, Error>
+    func addAccount() -> Future<Bool, Error>
 }
 
 struct DefaultBankAccount: BankAccountRepository {
@@ -19,8 +20,12 @@ struct DefaultBankAccount: BankAccountRepository {
         self.bankAccountSource = bankAccountSource
     }
     
-    func getAccount() -> Future<BankAccount, Error> {
+    func getAccount() -> Future<BankAccountModel, Error> {
         return bankAccountSource.getAccount()
+    }
+    
+    func addAccount() -> Future<Bool, Error> {
+        return bankAccountSource.addAccount()
     }
     
 }

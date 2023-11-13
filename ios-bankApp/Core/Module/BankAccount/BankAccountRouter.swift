@@ -8,6 +8,7 @@
 import UIKit
 
 protocol BankAccountRouter {
+    
 }
 
 struct DefaultBankAccountRouter: BankAccountRouter {
@@ -17,5 +18,4 @@ struct DefaultBankAccountRouter: BankAccountRouter {
     init(injection: Injection) {
         self.injection = injection
     }
-    
 }

@@ -9,23 +9,36 @@ import UIKit
 import Combine
 
 
-class BankAccountInteractor: BankAccountUseCase {
+class BankAccountInteractor: BankAccountPresenterToInteractor {
     
     private let repository: BankAccountRepository
-    
     var cancelable = Set<AnyCancellable>()
+    var presenter: BankAccountInteractorToPresenter?
     
     init(repository: BankAccountRepository) {
         self.repository = repository
     }
     
-    func getAccount() {
+    func getBankAccount() {
         repository.getAccount()
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in
-                
+            .sink(receiveCompletion: { [weak self] result in
+                switch result {
+                case .finished: break
+                case .failure(let error):
+                    self?.presenter?.fetchBankAccountFailure(with: error.localizedDescription)
+                }
             }, receiveValue: { [weak self] value in
-                
+                self?.presenter?.fetchBankAccountSuccess(with: value)
+            }).store(in: &cancelable)
+    }
+    
+    func addBankAccount() {
+        repository.addAccount()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { _ in
+            }, receiveValue: { value in
+                print(value)
             }).store(in: &cancelable)
     }
     
