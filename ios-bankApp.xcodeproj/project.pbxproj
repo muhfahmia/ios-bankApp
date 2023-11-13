@@ -8,11 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		5D2668E02B0211B700DA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2668DF2B0211B700DA51BC /* AppDelegate.swift */; };
-		5D2668E22B0211B700DA51BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2668E12B0211B700DA51BC /* SceneDelegate.swift */; };
-		5D2668E42B0211B700DA51BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2668E32B0211B700DA51BC /* ViewController.swift */; };
-		5D2668E72B0211B700DA51BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668E52B0211B700DA51BC /* Main.storyboard */; };
 		5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668E82B0211B800DA51BC /* Assets.xcassets */; };
 		5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */; };
+		5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5592B0216C900D1A2AC /* AppInjection.swift */; };
+		5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */; };
+		5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */; };
+		5DFFF5602B02176000D1A2AC /* BankAccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55F2B02176000D1A2AC /* BankAccountPresenter.swift */; };
+		5DFFF5622B0217C500D1A2AC /* HomeInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5612B0217C500D1A2AC /* HomeInjection.swift */; };
+		5DFFF5652B021ACB00D1A2AC /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5642B021ACB00D1A2AC /* HomeTabBarController.swift */; };
+		5DFFF5672B021BB800D1A2AC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5662B021BB800D1A2AC /* UIColor.swift */; };
+		5DFFF5692B021DF400D1A2AC /* BankAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DFFF5682B021DF400D1A2AC /* BankAccountViewController.xib */; };
+		5DFFF56B2B021FDA00D1A2AC /* BankAccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF56A2B021FDA00D1A2AC /* BankAccountEntity.swift */; };
+		5DFFF56D2B02208C00D1A2AC /* BankAccountInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF56C2B02208C00D1A2AC /* BankAccountInjection.swift */; };
+		5DFFF5722B02231D00D1A2AC /* BankAccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5712B02231D00D1A2AC /* BankAccountInteractor.swift */; };
+		5DFFF5742B02234300D1A2AC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5732B02234300D1A2AC /* HomeRouter.swift */; };
+		5DFFF57B2B0224C000D1A2AC /* BankAccountDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF57A2B0224C000D1A2AC /* BankAccountDataSource.swift */; };
+		5DFFF57E2B022B9700D1A2AC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF57D2B022B9700D1A2AC /* Error.swift */; };
+		5DFFF5812B022C8600D1A2AC /* BankAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5802B022C8600D1A2AC /* BankAccountModel.swift */; };
+		5DFFF5852B0254B300D1A2AC /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5842B0254B300D1A2AC /* UITableView.swift */; };
+		5DFFF5892B02562600D1A2AC /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5872B02562600D1A2AC /* BalanceTableViewCell.swift */; };
+		5DFFF58A2B02562600D1A2AC /* BalanceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DFFF5882B02562600D1A2AC /* BalanceTableViewCell.xib */; };
+		5DFFF58C2B0258EB00D1A2AC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF58B2B0258EB00D1A2AC /* String.swift */; };
+		5DFFF58E2B025CE300D1A2AC /* BankAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF58D2B025CE300D1A2AC /* BankAccountRepository.swift */; };
+		5DFFF5932B025F7100D1A2AC /* BankAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */; };
 		72C4DA4B44A05CB440277F0D /* Pods_ios_bankApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 736CB4DAEC377834EDFAB3DB /* Pods_ios_bankApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +38,30 @@
 		2117D919DCFCD2D039935B0F /* Pods-ios-bankApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-bankApp.debug.xcconfig"; path = "Target Support Files/Pods-ios-bankApp/Pods-ios-bankApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5D2668DC2B0211B700DA51BC /* ios-bankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-bankApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D2668DF2B0211B700DA51BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D2668E12B0211B700DA51BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5D2668E32B0211B700DA51BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5D2668E62B0211B700DA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D2668E82B0211B800DA51BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D2668EB2B0211B800DA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D2668ED2B0211B800DA51BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DFFF5592B0216C900D1A2AC /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
+		5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRouter.swift; sourceTree = "<group>"; };
+		5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
+		5DFFF55F2B02176000D1A2AC /* BankAccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountPresenter.swift; sourceTree = "<group>"; };
+		5DFFF5612B0217C500D1A2AC /* HomeInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInjection.swift; sourceTree = "<group>"; };
+		5DFFF5642B021ACB00D1A2AC /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		5DFFF5662B021BB800D1A2AC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5DFFF5682B021DF400D1A2AC /* BankAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BankAccountViewController.xib; sourceTree = "<group>"; };
+		5DFFF56A2B021FDA00D1A2AC /* BankAccountEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountEntity.swift; sourceTree = "<group>"; };
+		5DFFF56C2B02208C00D1A2AC /* BankAccountInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountInjection.swift; sourceTree = "<group>"; };
+		5DFFF5712B02231D00D1A2AC /* BankAccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountInteractor.swift; sourceTree = "<group>"; };
+		5DFFF5732B02234300D1A2AC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		5DFFF57A2B0224C000D1A2AC /* BankAccountDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountDataSource.swift; sourceTree = "<group>"; };
+		5DFFF57D2B022B9700D1A2AC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		5DFFF5802B022C8600D1A2AC /* BankAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountModel.swift; sourceTree = "<group>"; };
+		5DFFF5842B0254B300D1A2AC /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		5DFFF5872B02562600D1A2AC /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		5DFFF5882B02562600D1A2AC /* BalanceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceTableViewCell.xib; sourceTree = "<group>"; };
+		5DFFF58B2B0258EB00D1A2AC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5DFFF58D2B025CE300D1A2AC /* BankAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRepository.swift; sourceTree = "<group>"; };
+		5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountUseCase.swift; sourceTree = "<group>"; };
 		736CB4DAEC377834EDFAB3DB /* Pods_ios_bankApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_bankApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3251A3F5DC6FF2C039A165E /* Pods-ios-bankApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-bankApp.release.xcconfig"; path = "Target Support Files/Pods-ios-bankApp/Pods-ios-bankApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,15 +99,177 @@
 		5D2668DE2B0211B700DA51BC /* ios-bankApp */ = {
 			isa = PBXGroup;
 			children = (
-				5D2668DF2B0211B700DA51BC /* AppDelegate.swift */,
-				5D2668E12B0211B700DA51BC /* SceneDelegate.swift */,
-				5D2668E32B0211B700DA51BC /* ViewController.swift */,
-				5D2668E52B0211B700DA51BC /* Main.storyboard */,
+				5DFFF54E2B02152E00D1A2AC /* Core */,
+				5DFFF54D2B02152900D1A2AC /* Domain */,
+				5DFFF54C2B02152200D1A2AC /* Data */,
 				5D2668E82B0211B800DA51BC /* Assets.xcassets */,
-				5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */,
 				5D2668ED2B0211B800DA51BC /* Info.plist */,
 			);
 			path = "ios-bankApp";
+			sourceTree = "<group>";
+		};
+		5DFFF54C2B02152200D1A2AC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF57C2B022B9100D1A2AC /* Utils */,
+				5DFFF5752B02243300D1A2AC /* Entity */,
+				5DFFF56E2B0222CD00D1A2AC /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5DFFF54D2B02152900D1A2AC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF58F2B025F5400D1A2AC /* UseCase */,
+				5DFFF5702B0222DD00D1A2AC /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5DFFF54E2B02152E00D1A2AC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5522B02154B00D1A2AC /* Main */,
+				5DFFF5512B02154500D1A2AC /* Depedency */,
+				5DFFF5502B02153D00D1A2AC /* Module */,
+				5DFFF54F2B02153800D1A2AC /* Utils */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		5DFFF54F2B02153800D1A2AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5662B021BB800D1A2AC /* UIColor.swift */,
+				5DFFF5842B0254B300D1A2AC /* UITableView.swift */,
+				5DFFF58B2B0258EB00D1A2AC /* String.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DFFF5502B02153D00D1A2AC /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5632B021A9600D1A2AC /* TabBar */,
+				5DFFF5532B02156300D1A2AC /* BankAccount */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		5DFFF5512B02154500D1A2AC /* Depedency */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5592B0216C900D1A2AC /* AppInjection.swift */,
+				5DFFF5612B0217C500D1A2AC /* HomeInjection.swift */,
+				5DFFF56C2B02208C00D1A2AC /* BankAccountInjection.swift */,
+			);
+			path = Depedency;
+			sourceTree = "<group>";
+		};
+		5DFFF5522B02154B00D1A2AC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5D2668DF2B0211B700DA51BC /* AppDelegate.swift */,
+				5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5DFFF5532B02156300D1A2AC /* BankAccount */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5832B02534B00D1A2AC /* View */,
+				5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */,
+				5DFFF5712B02231D00D1A2AC /* BankAccountInteractor.swift */,
+				5DFFF55F2B02176000D1A2AC /* BankAccountPresenter.swift */,
+				5DFFF56A2B021FDA00D1A2AC /* BankAccountEntity.swift */,
+				5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */,
+			);
+			path = BankAccount;
+			sourceTree = "<group>";
+		};
+		5DFFF5632B021A9600D1A2AC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5642B021ACB00D1A2AC /* HomeTabBarController.swift */,
+				5DFFF5732B02234300D1A2AC /* HomeRouter.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		5DFFF56E2B0222CD00D1A2AC /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF56F2B0222D400D1A2AC /* Local */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5DFFF56F2B0222D400D1A2AC /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF57A2B0224C000D1A2AC /* BankAccountDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		5DFFF5702B0222DD00D1A2AC /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF58D2B025CE300D1A2AC /* BankAccountRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5DFFF5752B02243300D1A2AC /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF57F2B022C7700D1A2AC /* Local */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		5DFFF57C2B022B9100D1A2AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF57D2B022B9700D1A2AC /* Error.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5DFFF57F2B022C7700D1A2AC /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5802B022C8600D1A2AC /* BankAccountModel.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		5DFFF5832B02534B00D1A2AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5862B02560100D1A2AC /* BalanceCell */,
+				5DFFF5682B021DF400D1A2AC /* BankAccountViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5DFFF5862B02560100D1A2AC /* BalanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5872B02562600D1A2AC /* BalanceTableViewCell.swift */,
+				5DFFF5882B02562600D1A2AC /* BalanceTableViewCell.xib */,
+			);
+			path = BalanceCell;
+			sourceTree = "<group>";
+		};
+		5DFFF58F2B025F5400D1A2AC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				5DFFF5922B025F7100D1A2AC /* BankAccountUseCase.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 		7D88F01659CA673B554590E6 /* Frameworks */ = {
@@ -153,7 +351,8 @@
 			files = (
 				5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */,
 				5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */,
-				5D2668E72B0211B700DA51BC /* Main.storyboard in Resources */,
+				5DFFF58A2B02562600D1A2AC /* BalanceTableViewCell.xib in Resources */,
+				5DFFF5692B021DF400D1A2AC /* BankAccountViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,23 +405,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D2668E42B0211B700DA51BC /* ViewController.swift in Sources */,
+				5DFFF57E2B022B9700D1A2AC /* Error.swift in Sources */,
+				5DFFF5932B025F7100D1A2AC /* BankAccountUseCase.swift in Sources */,
+				5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */,
+				5DFFF56D2B02208C00D1A2AC /* BankAccountInjection.swift in Sources */,
+				5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */,
+				5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */,
+				5DFFF5622B0217C500D1A2AC /* HomeInjection.swift in Sources */,
+				5DFFF5672B021BB800D1A2AC /* UIColor.swift in Sources */,
+				5DFFF57B2B0224C000D1A2AC /* BankAccountDataSource.swift in Sources */,
+				5DFFF58E2B025CE300D1A2AC /* BankAccountRepository.swift in Sources */,
+				5DFFF5742B02234300D1A2AC /* HomeRouter.swift in Sources */,
+				5DFFF5722B02231D00D1A2AC /* BankAccountInteractor.swift in Sources */,
+				5DFFF5892B02562600D1A2AC /* BalanceTableViewCell.swift in Sources */,
+				5DFFF5602B02176000D1A2AC /* BankAccountPresenter.swift in Sources */,
+				5DFFF58C2B0258EB00D1A2AC /* String.swift in Sources */,
 				5D2668E02B0211B700DA51BC /* AppDelegate.swift in Sources */,
-				5D2668E22B0211B700DA51BC /* SceneDelegate.swift in Sources */,
+				5DFFF56B2B021FDA00D1A2AC /* BankAccountEntity.swift in Sources */,
+				5DFFF5852B0254B300D1A2AC /* UITableView.swift in Sources */,
+				5DFFF5652B021ACB00D1A2AC /* HomeTabBarController.swift in Sources */,
+				5DFFF5812B022C8600D1A2AC /* BankAccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5D2668E52B0211B700DA51BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D2668E62B0211B700DA51BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +574,6 @@
 				INFOPLIST_FILE = "ios-bankApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,7 +602,6 @@
 				INFOPLIST_FILE = "ios-bankApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
