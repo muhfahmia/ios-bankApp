@@ -5,18 +5,18 @@
 //  Created by Muhammad Fahmi on 13/11/23.
 //
 
-import Foundation
+import UIKit
 
 protocol BankAccountViewToPresenter {
     var view: BankAccountPresenterToView? { get set}
     var interactor: BankAccountPresenterToInteractor? { get set }
     var router: BankAccountRouter? { get set }
+    func balanceCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell
     func viewDidLoad()
-    func didSelectRowAt()
 }
 
 protocol BankAccountPresenterToView {
-    func onFetchSuccess(with account: BankAccount)
+    func onFetchSuccess()
 }
 
 protocol BankAccountInteractorToPresenter {

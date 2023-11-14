@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BankAccountRouter {
-    
+    func routeToPayment(from vc: UIViewController)
 }
 
 struct DefaultBankAccountRouter: BankAccountRouter {
@@ -17,5 +17,10 @@ struct DefaultBankAccountRouter: BankAccountRouter {
     
     init(injection: Injection) {
         self.injection = injection
+    }
+    
+    func routeToPayment(from vc: UIViewController) {
+        let paymentRouter: PaymentRouter = injection.resolve()
+        paymentRouter.routeToPayment(from: vc)
     }
 }

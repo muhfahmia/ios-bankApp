@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol Injection: HomeInjection, BankAccountInjection {}
+protocol Injection: HomeInjection, BankAccountInjection, PaymentInjection {}
 
 final class AppInjection: Injection {}

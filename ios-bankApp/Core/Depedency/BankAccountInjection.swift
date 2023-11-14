@@ -20,7 +20,7 @@ protocol BankAccountInjection {
 extension BankAccountInjection where Self: Injection {
     
     func resolve() -> BankAccountViewController {
-        let vc = BankAccountViewController()
+        let vc: BankAccountViewController = BankAccountViewController()
         let interactor: BankAccountInteractor = self.resolve()
         let presenter: BankAccountPresenter = self.resolve()
         vc.presenter = presenter

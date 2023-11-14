@@ -42,12 +42,10 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     private func setupUI() {
         tblView.dataSource = self
         tblView.delegate = self
-        
         tblView.register(nibWithCellClass: BalanceTableViewCell.self)
     }
     
-    func onFetchSuccess(with account: BankAccount) {
-        bankAccount = account
+    func onFetchSuccess() {
         tblView.reloadData()
     }
     
@@ -63,14 +61,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         let section = TableSection(rawValue: indexPath.section)
         switch section {
         case .balanceCell:
-            let cell: BalanceTableViewCell = tableView.dequeueReusableCell(withClass: BalanceTableViewCell.self)
-            let balance = String().rupiahFormat(from: bankAccount?.accountBalance ?? 0)
-            cell.accountBalance.text = balance
-            cell.doPaymentClick = { [weak self] in
-                let vc = PaymentViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }
-            return cell
+            return presenter?.balanceCell(tableView: tableView, vc: self) ?? UITableViewCell()
         case .none:
             return UITableViewCell()
         }

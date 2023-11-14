@@ -5,7 +5,7 @@
 //  Created by Muhammad Fahmi on 13/11/23.
 //
 
-import Foundation
+import UIKit
 
 class BankAccountPresenter: BankAccountViewToPresenter {
     
@@ -13,24 +13,31 @@ class BankAccountPresenter: BankAccountViewToPresenter {
     var interactor: BankAccountPresenterToInteractor?
     var router: BankAccountRouter?
     
-    func viewDidLoad() {
-        interactor?.getBankAccount()
+    var bankAccount: BankAccount?
+    
+    func balanceCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell {
+        let cell: BalanceTableViewCell = tableView.dequeueReusableCell(withClass: BalanceTableViewCell.self)
+        let balance = String().rupiahFormat(from: bankAccount?.accountBalance ?? 0)
+        cell.accountBalance.text = balance
+        cell.doPaymentClick = { [weak self] in
+            self?.router?.routeToPayment(from: vc)
+        }
+        return cell
     }
     
-    func didSelectRowAt() {
-        
+    func viewDidLoad() {
+        interactor?.getBankAccount()
     }
     
 }
 
 extension BankAccountPresenter: BankAccountInteractorToPresenter {
     func fetchBankAccountSuccess(with account: BankAccount) {
-        view?.onFetchSuccess(with: account)
+        bankAccount = account
+        view?.onFetchSuccess()
     }
     
     func fetchBankAccountFailure(with error: String) {
         print("error from presenter \(error)")
     }
-    
-    
 }
