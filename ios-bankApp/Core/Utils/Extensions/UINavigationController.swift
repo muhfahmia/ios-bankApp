@@ -9,6 +9,20 @@ import UIKit
 
 
 public extension UINavigationBar {
+    
+    func setTitleFont(_ font: UIFont, color: UIColor = .black) {
+        var attrs = [NSAttributedString.Key: Any]()
+        attrs[.font] = font
+        attrs[.foregroundColor] = color
+        if #available(iOS 13.0, tvOS 13.0, *) {
+            standardAppearance.titleTextAttributes = attrs
+            scrollEdgeAppearance?.titleTextAttributes = attrs
+            compactAppearance?.titleTextAttributes = attrs
+        } else {
+            titleTextAttributes = attrs
+        }
+    }
+    
     func makeTransparent(withTint tint: UIColor = .white) {
         let legacyAppearance = { [self] in
             isTranslucent = true
