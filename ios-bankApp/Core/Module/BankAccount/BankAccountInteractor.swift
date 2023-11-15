@@ -11,16 +11,19 @@ import Combine
 
 class BankAccountInteractor: BankAccountPresenterToInteractor {
     
-    private let repository: BankAccountRepository
+    private let bankRepo: BankAccountRepository
+    private let transRepo: TransactionRepository
+    
     var cancelable = Set<AnyCancellable>()
     var presenter: BankAccountInteractorToPresenter?
     
-    init(repository: BankAccountRepository) {
-        self.repository = repository
+    init(bankRepo: BankAccountRepository, transRepo: TransactionRepository) {
+        self.bankRepo = bankRepo
+        self.transRepo = transRepo
     }
     
     func getBankAccount() {
-        repository.getAccount()
+        bankRepo.getAccount()
         .receive(on: RunLoop.main)
         .sink(receiveValue: { [weak self] value in
             self?.presenter?.fetchBankAccountSuccess(with: value)
@@ -28,12 +31,20 @@ class BankAccountInteractor: BankAccountPresenterToInteractor {
     }
     
     func addBankAccount() {
-        repository.addAccount()
+        bankRepo.addAccount()
         .receive(on: RunLoop.main)
         .sink(receiveCompletion: { _ in
         }, receiveValue: { value in
             print(value)
         }).store(in: &cancelable)
+    }
+    
+    func getListTransaction() {
+        transRepo.getTransactionList()
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] value in
+                self?.presenter?.fetchTransactionListSuccess(with: value)
+            }).store(in: &cancelable)
     }
     
 }

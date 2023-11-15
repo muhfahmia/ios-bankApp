@@ -12,6 +12,9 @@
 		5D2668E02B0211B700DA51BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2668DF2B0211B700DA51BC /* AppDelegate.swift */; };
 		5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668E82B0211B800DA51BC /* Assets.xcassets */; };
 		5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2668EA2B0211B800DA51BC /* LaunchScreen.storyboard */; };
+		5D6729E92B04D1AC00CA3D99 /* PromoInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6729E82B04D1AC00CA3D99 /* PromoInjection.swift */; };
+		5D6729EB2B04D1BA00CA3D99 /* PromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6729EA2B04D1BA00CA3D99 /* PromoViewController.swift */; };
+		5D6729ED2B04D1C400CA3D99 /* PromoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6729EC2B04D1C400CA3D99 /* PromoViewController.xib */; };
 		5D8BB9EE2B02F1AE00825557 /* PaymentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB9ED2B02F1AD00825557 /* PaymentProtocols.swift */; };
 		5D8BB9F02B02F33800825557 /* PaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB9EF2B02F33800825557 /* PaymentPresenter.swift */; };
 		5D8BB9F22B02F61000825557 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8BB9F12B02F61000825557 /* PaymentRouter.swift */; };
@@ -64,6 +67,9 @@
 		5D2668E82B0211B800DA51BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D2668EB2B0211B800DA51BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D2668ED2B0211B800DA51BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D6729E82B04D1AC00CA3D99 /* PromoInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoInjection.swift; sourceTree = "<group>"; };
+		5D6729EA2B04D1BA00CA3D99 /* PromoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoViewController.swift; sourceTree = "<group>"; };
+		5D6729EC2B04D1C400CA3D99 /* PromoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PromoViewController.xib; sourceTree = "<group>"; };
 		5D8BB9ED2B02F1AD00825557 /* PaymentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProtocols.swift; sourceTree = "<group>"; };
 		5D8BB9EF2B02F33800825557 /* PaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPresenter.swift; sourceTree = "<group>"; };
 		5D8BB9F12B02F61000825557 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
@@ -148,6 +154,23 @@
 				5D2668ED2B0211B800DA51BC /* Info.plist */,
 			);
 			path = "ios-bankApp";
+			sourceTree = "<group>";
+		};
+		5D6729E72B04D19D00CA3D99 /* Promo */ = {
+			isa = PBXGroup;
+			children = (
+				5D6729EE2B04D1DC00CA3D99 /* View */,
+				5D6729EA2B04D1BA00CA3D99 /* PromoViewController.swift */,
+			);
+			path = Promo;
+			sourceTree = "<group>";
+		};
+		5D6729EE2B04D1DC00CA3D99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D6729EC2B04D1C400CA3D99 /* PromoViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5DA78C2B2B035590006C8731 /* Transaction */ = {
@@ -261,6 +284,7 @@
 		5DFFF5502B02153D00D1A2AC /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5D6729E72B04D19D00CA3D99 /* Promo */,
 				5DFFF5632B021A9600D1A2AC /* TabBar */,
 				5DFFF5532B02156300D1A2AC /* BankAccount */,
 				5DDD72F22B02927700FA3A85 /* Payment */,
@@ -277,6 +301,7 @@
 				5DFFF56C2B02208C00D1A2AC /* BankAccountInjection.swift */,
 				5D8BB9F32B02F93600825557 /* PaymentInjection.swift */,
 				5D23237B2B0366D300795423 /* TransactionInjection.swift */,
+				5D6729E82B04D1AC00CA3D99 /* PromoInjection.swift */,
 			);
 			path = Depedency;
 			sourceTree = "<group>";
@@ -464,6 +489,7 @@
 				5D2668EC2B0211B800DA51BC /* LaunchScreen.storyboard in Resources */,
 				5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */,
 				5DFFF58A2B02562600D1A2AC /* BalanceTableViewCell.xib in Resources */,
+				5D6729ED2B04D1C400CA3D99 /* PromoViewController.xib in Resources */,
 				5DDD72FB2B02958800FA3A85 /* PaymentViewController.xib in Resources */,
 				5DFFF5692B021DF400D1A2AC /* BankAccountViewController.xib in Resources */,
 				5DA78C302B0355AF006C8731 /* TransactionViewController.xib in Resources */,
@@ -535,6 +561,7 @@
 				5DFFF57B2B0224C000D1A2AC /* BankAccountDataSource.swift in Sources */,
 				5DB1EE6A2B04AED40025C2CA /* HistoryCellTableViewCell.swift in Sources */,
 				5D23237E2B03671600795423 /* TransactionRouter.swift in Sources */,
+				5D6729EB2B04D1BA00CA3D99 /* PromoViewController.swift in Sources */,
 				5DFFF58E2B025CE300D1A2AC /* BankAccountRepository.swift in Sources */,
 				5DB1EE662B049C070025C2CA /* TransactionInteractor.swift in Sources */,
 				5DFFF5742B02234300D1A2AC /* HomeRouter.swift in Sources */,
@@ -557,6 +584,7 @@
 				5DFFF5812B022C8600D1A2AC /* BankAccountModel.swift in Sources */,
 				5DB1EE572B03C9410025C2CA /* TransactionProtocols.swift in Sources */,
 				5DDD72F82B02957100FA3A85 /* PaymentViewController.swift in Sources */,
+				5D6729E92B04D1AC00CA3D99 /* PromoInjection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

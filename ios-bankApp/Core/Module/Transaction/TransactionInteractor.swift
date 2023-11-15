@@ -22,8 +22,8 @@ class TransactionInteractor: TransactionPresenterToInteractor {
         transRepo.addTransaction(payload: payload)
         .receive(on: RunLoop.main)
         .sink(receiveCompletion: { _ in
-        }, receiveValue: { value in
-            print(value)
+        }, receiveValue: { [weak self] value in
+            self?.presenter?.transactionSuccess()
         }).store(in: &store)
     }
     

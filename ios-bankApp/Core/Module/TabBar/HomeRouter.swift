@@ -10,6 +10,7 @@ import UIKit
 protocol HomeRouter {
     func appRoute(window: UIWindow?)
     var bankAccountVC: BankAccountViewController { get }
+    var promoVC: PromoViewController { get }
 }
 
 struct DefaultHomeRouter: HomeRouter {
@@ -21,6 +22,10 @@ struct DefaultHomeRouter: HomeRouter {
     }
     
     var bankAccountVC: BankAccountViewController {
+        injection.resolve()
+    }
+    
+    var promoVC: PromoViewController {
         injection.resolve()
     }
     

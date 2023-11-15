@@ -14,6 +14,16 @@ class BankAccountPresenter: BankAccountViewToPresenter {
     var router: BankAccountRouter?
     
     var bankAccount: BankAccount?
+    var transaction: [TransactionEntity]?
+    
+    func viewDidLoad() {
+        interactor?.getBankAccount()
+        interactor?.getListTransaction()
+    }
+    
+    func viewWillAppear() {
+        viewDidLoad()
+    }
     
     func balanceCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell {
         let cell: BalanceTableViewCell = tableView.dequeueReusableCell(withClass: BalanceTableViewCell.self)
@@ -25,18 +35,25 @@ class BankAccountPresenter: BankAccountViewToPresenter {
         return cell
     }
     
-    func historyCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell {
+    func historyCell(tableView: UITableView, indexPath: IndexPath ,vc: UIViewController) -> UITableViewCell {
         let cell: HistoryCellTableViewCell = tableView.dequeueReusableCell(withClass: HistoryCellTableViewCell.self)
+        let trans = transaction?[indexPath.item]
+        cell.transID.text = trans?.transID
+        cell.merchant.text = trans?.merchant
+        cell.amount.text = String().rupiahFormat(from: trans?.amount ?? 0)
         return cell
-    }
-    
-    func viewDidLoad() {
-        interactor?.getBankAccount()
     }
     
 }
 
 extension BankAccountPresenter: BankAccountInteractorToPresenter {
+    
+    func fetchTransactionListSuccess(with trans: [TransactionModel]) {
+        transaction = trans
+        view?.onFetchSuccessTransactionList()
+        
+    }
+    
     func fetchBankAccountSuccess(with account: BankAccount) {
         bankAccount = account
         view?.onFetchSuccess()

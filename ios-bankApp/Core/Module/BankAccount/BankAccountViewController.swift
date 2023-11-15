@@ -38,7 +38,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        presenter?.viewDidLoad()
+        presenter?.viewWillAppear()
     }
     
     private func setupUI() {
@@ -49,7 +49,11 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     }
     
     func onFetchSuccess() {
-        tblView.reloadData()
+        tblView.reloadSections(IndexSet(integer: 0), with: .automatic)
+    }
+    
+    func onFetchSuccessTransactionList() {
+        tblView.reloadSections(IndexSet(integer: 1), with: .automatic)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,7 +66,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         case .balanceCell:
             return 1
         case .historyCell:
-            return 10
+            return presenter?.transaction?.count ?? 0
         case .none:
             return 0
         }
@@ -74,7 +78,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         case .balanceCell:
             return presenter?.balanceCell(tableView: tableView, vc: self) ?? UITableViewCell()
         case .historyCell:
-            return presenter?.historyCell(tableView: tableView, vc: self) ?? UITableViewCell()
+            return presenter?.historyCell(tableView: tableView, indexPath: indexPath, vc: self) ?? UITableViewCell()
         case .none:
             return UITableViewCell()
         }

@@ -31,7 +31,8 @@ class HomeTabBarController: UITabBarController {
         tabBar.backgroundColor = UIColor.backgroundColor
 
         let bankTab = createTabController(vc: router.bankAccountVC, image: setImageTab(imageSystem: "banknote.fill"), title: "Home")
-        setViewControllers([bankTab], animated: true)
+        let promoTab = createTabController(vc: router.promoVC, image: setImageTab(imageSystem: "giftcard.fill"), title: "Promo")
+        setViewControllers([bankTab, promoTab], animated: true)
     }
     
     private func createTabController(vc: UIViewController, image: UIImage, title: String) -> UINavigationController {

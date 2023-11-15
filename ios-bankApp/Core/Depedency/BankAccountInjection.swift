@@ -36,7 +36,7 @@ extension BankAccountInjection where Self: Injection {
     }
     
     func resolve() -> BankAccountInteractor {
-        return BankAccountInteractor(repository: resolve())
+        return BankAccountInteractor(bankRepo: resolve(), transRepo: resolve())
     }
     
     func resolve() -> BankAccountRouter {

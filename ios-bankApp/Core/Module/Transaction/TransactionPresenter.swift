@@ -35,7 +35,7 @@ extension TransactionPresenter: TransactionInteractorToPresenter {
     }
     
     func transactionSuccess() {
-       
+        view?.onTransactionSuccess()
     }
     
     func transactionFail() {

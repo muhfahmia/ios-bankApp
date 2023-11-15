@@ -40,6 +40,7 @@ class TransactionViewController: UIViewController, TransactionPresenterToView {
     }
     
     func onTransactionSuccess() {
+        navigationController?.popViewController(animated: true)
     }
     
     func onTransactionFailed() {

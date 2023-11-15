@@ -19,6 +19,7 @@ class PaymentPresenter: PaymentViewToPresenter {
     }
     
     func doPay(vc: UIViewController, payload: String) {
+        print(payload)
         router?.routeToTransaction(vc: vc, payload: payload)
     }
     

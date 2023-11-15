@@ -9,6 +9,10 @@ import UIKit
 
 class HistoryCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var transID: UILabel!
+    @IBOutlet weak var merchant: UILabel!
+    @IBOutlet weak var amount: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -16,7 +20,6 @@ class HistoryCellTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     

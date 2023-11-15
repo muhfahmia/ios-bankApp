@@ -10,6 +10,7 @@ import Combine
 protocol TransactionRepository {
     func addTransaction(payload: String) -> Future<Bool, Never>
     func getTransactionPayload(payload: String) -> Future<TransactionModel, Never>
+    func getTransactionList() -> Future<[TransactionModel], Never>
 }
 
 struct DefaultTransactionRepository: TransactionRepository {
@@ -26,6 +27,10 @@ struct DefaultTransactionRepository: TransactionRepository {
     
     func getTransactionPayload(payload: String) -> Future<TransactionModel, Never> {
         transDataSource.getTransactionPayload(payload: payload)
+    }
+    
+    func getTransactionList() -> Future<[TransactionModel], Never> {
+        transDataSource.getTransactionList()
     }
     
 }
