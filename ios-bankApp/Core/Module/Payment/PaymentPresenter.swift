@@ -13,25 +13,36 @@ class PaymentPresenter: PaymentViewToPresenter {
     
     var view: PaymentPresenterToView?
     var router: PaymentRouter?
+
+    func viewDidLoad() {
+        checkPermission()
+    }
+    
+    func doPay(vc: UIViewController, payload: String) {
+        router?.routeToTransaction(vc: vc, payload: payload)
+    }
     
     func checkPermission() {
         let statusPermission = AVCaptureDevice.authorizationStatus(for: .video)
         switch statusPermission {
         case .authorized:
             AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
-                guard granted else { self?.view?.popNavigationController(); return }
+                guard granted else { self?.view?.popNavigationController()
+                    return
+                }
                 self?.view?.setupCamera()
             }
         case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { (success) in
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] (success) in
                 if success == true {
-                    print("permission granted")
+                    self?.view?.setupCamera()
                 } else {
-                    print("permission denied")
+                    DispatchQueue.main.async {
+                        self?.view?.popNavigationController()
+                    }
                 }
             }
             print("notDetermined")
-            
         case .restricted:
             print("restricted")
         case .denied:

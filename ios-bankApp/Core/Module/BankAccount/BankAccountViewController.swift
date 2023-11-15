@@ -15,6 +15,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     
     enum TableSection: Int, CaseIterable {
         case balanceCell
+        case historyCell
     }
     
     var presenter: BankAccountViewToPresenter?
@@ -37,12 +38,14 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        presenter?.viewDidLoad()
     }
     
     private func setupUI() {
         tblView.dataSource = self
         tblView.delegate = self
         tblView.register(nibWithCellClass: BalanceTableViewCell.self)
+        tblView.register(nibWithCellClass: HistoryCellTableViewCell.self)
     }
     
     func onFetchSuccess() {
@@ -54,7 +57,15 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        let section = TableSection(rawValue: section)
+        switch section {
+        case .balanceCell:
+            return 1
+        case .historyCell:
+            return 10
+        case .none:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +73,8 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         switch section {
         case .balanceCell:
             return presenter?.balanceCell(tableView: tableView, vc: self) ?? UITableViewCell()
+        case .historyCell:
+            return presenter?.historyCell(tableView: tableView, vc: self) ?? UITableViewCell()
         case .none:
             return UITableViewCell()
         }

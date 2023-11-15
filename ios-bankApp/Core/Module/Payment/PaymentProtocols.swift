@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 protocol PaymentViewToPresenter {
     var view: PaymentPresenterToView? { get set }
     var router: PaymentRouter? { get set }
-    func checkPermission()
+    func viewDidLoad()
+    func doPay(vc: UIViewController, payload: String)
 }
 
 protocol PaymentPresenterToView {

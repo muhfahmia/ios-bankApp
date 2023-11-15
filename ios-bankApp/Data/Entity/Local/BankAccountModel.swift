@@ -16,7 +16,4 @@ class BankAccountModel: Object, BankAccount {
     override class func primaryKey() -> String? {
         return "accountID"
     }
-    
-    
-    
 }

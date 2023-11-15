@@ -25,6 +25,11 @@ class BankAccountPresenter: BankAccountViewToPresenter {
         return cell
     }
     
+    func historyCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell {
+        let cell: HistoryCellTableViewCell = tableView.dequeueReusableCell(withClass: HistoryCellTableViewCell.self)
+        return cell
+    }
+    
     func viewDidLoad() {
         interactor?.getBankAccount()
     }

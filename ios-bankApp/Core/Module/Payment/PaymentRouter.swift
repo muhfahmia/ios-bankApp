@@ -8,7 +8,8 @@
 import UIKit
 
 protocol PaymentRouter {
-    func routeToPayment(from vc: UIViewController)
+    func pushToPayment(from vc: UIViewController)
+    func routeToTransaction(vc: UIViewController, payload: String)
 }
 
 struct DefaultPaymentRouter: PaymentRouter {
@@ -19,11 +20,16 @@ struct DefaultPaymentRouter: PaymentRouter {
         self.injection = injection
     }
     
-    func routeToPayment(from vc: UIViewController) {
+    func pushToPayment(from vc: UIViewController) {
         let paymentVC: PaymentViewController = injection.resolve()
         paymentVC.hidesBottomBarWhenPushed = true
         paymentVC.navigationController?.isNavigationBarHidden = true
         vc.navigationController?.pushViewController(paymentVC, animated: true)
+    }
+    
+    func routeToTransaction(vc: UIViewController, payload: String) {
+        let transactionRouter: TransactionRouter = injection.resolve()
+        transactionRouter.pushToTransaction(from: vc, payload: payload)
     }
     
 }

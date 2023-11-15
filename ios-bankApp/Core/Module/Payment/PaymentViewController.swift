@@ -10,26 +10,31 @@ import AVFoundation
 
 class PaymentViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, PaymentPresenterToView {
     
+    @IBOutlet weak var backBtn: UIButton!
+    
     private let session = AVCaptureSession()
     private var previewView = AVCaptureVideoPreviewLayer()
+    private var isSessionActive = false
     
     var presenter: PaymentViewToPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.checkPermission()
+        backBtn.addAction(UIAction(handler: { [weak self] _ in
+            self?.popNavigationController()
+        }), for: .touchUpInside)
+        presenter?.viewDidLoad()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            self?.session.stopRunning()
-        }
+        stopSession()
     }
     
     override func viewDidLayoutSubviews() {
         previewView.frame = self.view.bounds
         view.layer.addSublayer(previewView)
+        view.bringSubviewToFront(backBtn)
     }
     
     func popNavigationController() {
@@ -41,7 +46,7 @@ class PaymentViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func setupCamera() {
-        guard let captureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) else { return print("failed") }
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return print("failed") }
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
             session.addInput(input)
@@ -52,7 +57,7 @@ class PaymentViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+        output.metadataObjectTypes = [.qr, .ean13, .ean8, .code128, .upce]
         self.previewView.videoGravity = .resizeAspectFill
         self.previewView.session = session
         DispatchQueue.global(qos: .background).async { [weak self] in
@@ -60,14 +65,23 @@ class PaymentViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         }
     }
     
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        
-        guard let metaObject = metadataObjects.first else { return print("object data not found") }
-        if metaObject.type == .qr {
-            guard let readObject = metaObject as? AVMetadataMachineReadableCodeObject else { return }
-            print(readObject.stringValue!)
+    private func stopSession() {
+        isSessionActive = true
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            self?.session.stopRunning()
         }
-        
     }
     
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        guard let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+        metadataObject.type == .qr,
+        let stringValue = metadataObject.stringValue else { return }
+        if !stringValue.isEmpty {
+            if !isSessionActive {
+                popNavigationController()
+                presenter?.doPay(vc: self, payload: stringValue)
+            }
+            stopSession()
+        }
+    }
 }

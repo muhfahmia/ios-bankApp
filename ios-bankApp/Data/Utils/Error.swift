@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum ErrorDescription: Error {
+enum LocalError: Error {
     case unknown
     case connectionError
     case invalidJSONError
@@ -16,7 +16,7 @@ enum ErrorDescription: Error {
     case invalidRealm
 }
 
-extension ErrorDescription {
+extension LocalError {
     var localizedDescription: String {
         switch self {
         case .unknown:

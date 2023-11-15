@@ -12,6 +12,7 @@ protocol BankAccountViewToPresenter {
     var interactor: BankAccountPresenterToInteractor? { get set }
     var router: BankAccountRouter? { get set }
     func balanceCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell
+    func historyCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell
     func viewDidLoad()
 }
 

@@ -10,7 +10,7 @@ import Combine
 
 protocol BankAccountDataSource {
     func addAccount() -> Future<Bool, Error>
-    func getAccount() -> Future<BankAccountModel, Error>
+    func getAccount() -> Future<BankAccountModel, Never>
 }
 
 struct DefaultBankAccountDataSource: BankAccountDataSource {
@@ -33,20 +33,20 @@ struct DefaultBankAccountDataSource: BankAccountDataSource {
                 }
                 promise(.success(true))
             } catch {
-                promise(.failure(ErrorDescription.invalidRealm))
+                promise(.failure(LocalError.invalidRealm))
             }
         }
     }
     
-    func getAccount() -> Future<BankAccountModel, Error> {
-        return Future<BankAccountModel, Error> { promise in
+    func getAccount() -> Future<BankAccountModel, Never> {
+        return Future<BankAccountModel, Never> { promise in
             if let realm = self.realm {
-                let account = realm.objects(BankAccountModel.self)
+                var account = realm.objects(BankAccountModel.self)
                 if account.isEmpty {
-                    promise(.failure(ErrorDescription.invalidRealm))
-                } else {
-                    promise(.success(account.first!))
+                    _ = addAccount()
                 }
+                account = realm.objects(BankAccountModel.self)
+                promise(.success(account.first!))
             }
         }
     }
