@@ -28,7 +28,7 @@ struct DefaultTransactionDataSource: TransactionDataSource {
             guard let bankAccount = bankAccount else { return promise (.success(false))}
             let transaction = TransactionModel()
             transaction.mappingPayloadToModel(payload: payload)
-            let balanceUpdate = bankAccount.accountBalance! - transaction.amount!
+            let balanceUpdate = bankAccount.accountBalance! - (transaction.amount ?? 0)
             do {
                 try realm?.write {
                     bankAccount.accountBalance = balanceUpdate

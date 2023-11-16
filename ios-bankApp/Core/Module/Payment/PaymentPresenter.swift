@@ -20,7 +20,8 @@ class PaymentPresenter: PaymentViewToPresenter {
     
     func doPay(vc: UIViewController, payload: String) {
         let payloads = payload.components(separatedBy: ".")
-        guard payloads.count == 4 else {
+        let amount = Double(payloads.endIndex)
+        guard payloads.count == 4 && amount > 0 else {
             print("Payload incorrect: \(payloads.count)")
             return
         }
