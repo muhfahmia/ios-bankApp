@@ -56,6 +56,8 @@
 		5DF0CA742B05379500A65687 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0CA722B05379500A65687 /* MessageTableViewCell.swift */; };
 		5DF0CA752B05379500A65687 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF0CA732B05379500A65687 /* MessageTableViewCell.xib */; };
 		5DF6F40F2B05A65E00A97F27 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6F40E2B05A65E00A97F27 /* Date.swift */; };
+		5DF6F4132B05B69D00A97F27 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6F4112B05B69D00A97F27 /* TitleTableViewCell.swift */; };
+		5DF6F4142B05B69D00A97F27 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF6F4122B05B69D00A97F27 /* TitleTableViewCell.xib */; };
 		5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5592B0216C900D1A2AC /* AppInjection.swift */; };
 		5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */; };
 		5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */; };
@@ -133,6 +135,8 @@
 		5DF0CA722B05379500A65687 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		5DF0CA732B05379500A65687 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		5DF6F40E2B05A65E00A97F27 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		5DF6F4112B05B69D00A97F27 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		5DF6F4122B05B69D00A97F27 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
 		5DFFF5592B0216C900D1A2AC /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
 		5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRouter.swift; sourceTree = "<group>"; };
 		5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
@@ -335,6 +339,15 @@
 			path = MessageCell;
 			sourceTree = "<group>";
 		};
+		5DF6F4102B05B68F00A97F27 /* TitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DF6F4112B05B69D00A97F27 /* TitleTableViewCell.swift */,
+				5DF6F4122B05B69D00A97F27 /* TitleTableViewCell.xib */,
+			);
+			path = TitleCell;
+			sourceTree = "<group>";
+		};
 		5DFFF54C2B02152200D1A2AC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +502,7 @@
 		5DFFF5832B02534B00D1A2AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5DF6F4102B05B68F00A97F27 /* TitleCell */,
 				5DF0CA712B05378300A65687 /* MessageCell */,
 				5DB1EE672B04AEC30025C2CA /* HistoryCell */,
 				5DFFF5862B02560100D1A2AC /* BalanceCell */,
@@ -583,6 +597,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF6F4142B05B69D00A97F27 /* TitleTableViewCell.xib in Resources */,
 				5DB1EE6B2B04AED40025C2CA /* HistoryCellTableViewCell.xib in Resources */,
 				5DF0CA752B05379500A65687 /* MessageTableViewCell.xib in Resources */,
 				5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */,
@@ -686,6 +701,7 @@
 				5D6729F92B04DBE700CA3D99 /* PromoProtocols.swift in Sources */,
 				5D6729FB2B04F2D600CA3D99 /* PromoDataSource.swift in Sources */,
 				5DFFF58C2B0258EB00D1A2AC /* String.swift in Sources */,
+				5DF6F4132B05B69D00A97F27 /* TitleTableViewCell.swift in Sources */,
 				5DF0CA6A2B051F0800A65687 /* PromoDetailInteractor.swift in Sources */,
 				5DB1EE592B046A280025C2CA /* TransactionEntity.swift in Sources */,
 				5DF0CA702B0532BC00A65687 /* UIViewController.swift in Sources */,

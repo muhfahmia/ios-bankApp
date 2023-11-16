@@ -11,4 +11,5 @@ protocol TransactionEntity {
     var merchant: String? { get }
     var amount: Double? { get }
     var paymentDate: String? { get }
+    var type: String? { get }
 }

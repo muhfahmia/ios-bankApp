@@ -27,9 +27,16 @@ struct DefaultBankAccountDataSource: BankAccountDataSource {
             myAccount.accountNumber = "123456789"
             myAccount.accountName = "Fahmi"
             myAccount.accountBalance = 10000000
+            let topUpTransaction = TransactionModel()
+            topUpTransaction.amount = 10000000
+            topUpTransaction.transID = "IDTOPUP12345"
+            topUpTransaction.merchant = "TOPUP SALDO"
+            topUpTransaction.bankName = "BNI"
+            topUpTransaction.type = "IN"
             do {
                 try realm?.write {
                     realm?.add(myAccount)
+                    realm?.add(topUpTransaction)
                 }
                 promise(.success(true))
             } catch {

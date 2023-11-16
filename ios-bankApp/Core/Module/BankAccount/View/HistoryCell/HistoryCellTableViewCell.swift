@@ -9,6 +9,7 @@ import UIKit
 
 class HistoryCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var transImage: UIImageView!
     @IBOutlet weak var transID: UILabel!
     @IBOutlet weak var merchant: UILabel!
     @IBOutlet weak var amount: UILabel!

@@ -35,9 +35,19 @@ class BankAccountPresenter: BankAccountViewToPresenter {
         return cell
     }
     
+    func titleCell(tableView: UITableView) -> UITableViewCell {
+        let cell: TitleTableViewCell = tableView.dequeueReusableCell(withClass: TitleTableViewCell.self)
+        return cell
+    }
+    
     func historyCell(tableView: UITableView, indexPath: IndexPath ,vc: UIViewController) -> UITableViewCell {
         let cell: HistoryCellTableViewCell = tableView.dequeueReusableCell(withClass: HistoryCellTableViewCell.self)
         let trans = transaction?[indexPath.item]
+        
+        if trans?.type == "IN" {
+            cell.transImage.image = UIImage(systemName: "arrowshape.up.fill")
+            cell.transImage.tintColor = UIColor.primaryColor
+        }
         cell.transID.text = trans?.transID
         cell.merchant.text = trans?.merchant
         cell.amount.text = String().rupiahFormat(from: trans?.amount ?? 0)

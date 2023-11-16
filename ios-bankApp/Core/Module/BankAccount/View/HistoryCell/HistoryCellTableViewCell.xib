@@ -74,6 +74,7 @@
                 <outlet property="merchant" destination="Q5G-Ww-tE0" id="zlP-9f-Toc"/>
                 <outlet property="paymentDate" destination="LWe-fp-asQ" id="n7Y-iy-D0j"/>
                 <outlet property="transID" destination="Sgo-bz-0qd" id="JCv-f6-OcP"/>
+                <outlet property="transImage" destination="Ufg-zI-qmQ" id="etV-az-ozt"/>
             </connections>
             <point key="canvasLocation" x="282" y="51"/>
         </tableViewCell>

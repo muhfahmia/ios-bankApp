@@ -15,6 +15,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     
     enum TableSection: Int, CaseIterable {
         case balanceCell
+        case titleCell
         case historyCell
         case messageCell
     }
@@ -46,6 +47,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         tblView.dataSource = self
         tblView.delegate = self
         tblView.register(nibWithCellClass: BalanceTableViewCell.self)
+        tblView.register(nibWithCellClass: TitleTableViewCell.self)
         tblView.register(nibWithCellClass: HistoryCellTableViewCell.self)
         tblView.register(nibWithCellClass: MessageTableViewCell.self)
     }
@@ -55,7 +57,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     }
     
     func onFetchSuccessTransactionList() {
-        tblView.reloadSections(IndexSet(integer: 1), with: .automatic)
+        tblView.reloadSections(IndexSet(integer: 2), with: .automatic)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,6 +68,8 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         let section = TableSection(rawValue: section)
         switch section {
         case .balanceCell:
+            return 1
+        case .titleCell:
             return 1
         case .historyCell:
             return presenter?.transaction?.count ?? 0
@@ -81,6 +85,8 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         switch section {
         case .balanceCell:
             return presenter?.balanceCell(tableView: tableView, vc: self) ?? UITableViewCell()
+        case .titleCell:
+            return presenter?.titleCell(tableView: tableView) ?? UITableViewCell()
         case .historyCell:
             return presenter?.historyCell(tableView: tableView, indexPath: indexPath, vc: self) ?? UITableViewCell()
         case .messageCell:
