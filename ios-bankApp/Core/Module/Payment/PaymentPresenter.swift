@@ -19,7 +19,11 @@ class PaymentPresenter: PaymentViewToPresenter {
     }
     
     func doPay(vc: UIViewController, payload: String) {
-        print(payload)
+        let payloads = payload.components(separatedBy: ".")
+        guard payloads.count > 3 && payloads.endIndex == 3 else {
+            print("Payload incorrect: \(payloads.count)")
+            return
+        }
         router?.routeToTransaction(vc: vc, payload: payload)
     }
     

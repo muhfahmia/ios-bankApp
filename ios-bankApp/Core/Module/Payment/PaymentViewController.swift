@@ -46,7 +46,10 @@ class PaymentViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func setupCamera() {
-        guard let captureDevice = AVCaptureDevice.default(for: .video) else { return print("failed") }
+        guard let captureDevice = AVCaptureDevice.default(for: .video) else {
+            print("Camera support only on Device not Simulator xCode")
+            return
+        }
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
             session.addInput(input)
