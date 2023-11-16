@@ -47,6 +47,9 @@ class BankAccountPresenter: BankAccountViewToPresenter {
         if trans?.type == "IN" {
             cell.transImage.image = UIImage(systemName: "arrowshape.up.fill")
             cell.transImage.tintColor = UIColor.primaryColor
+        } else {
+            cell.transImage.image = UIImage(systemName: "arrowshape.down.fill")
+            cell.transImage.tintColor = UIColor.accentColor
         }
         cell.transID.text = trans?.transID
         cell.merchant.text = trans?.merchant
