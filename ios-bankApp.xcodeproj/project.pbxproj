@@ -53,6 +53,9 @@
 		5DF0CA6C2B051F0F00A65687 /* PromoDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0CA6B2B051F0F00A65687 /* PromoDetailRouter.swift */; };
 		5DF0CA6E2B05202900A65687 /* PromoDetailInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0CA6D2B05202900A65687 /* PromoDetailInjection.swift */; };
 		5DF0CA702B0532BC00A65687 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0CA6F2B0532BC00A65687 /* UIViewController.swift */; };
+		5DF0CA742B05379500A65687 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF0CA722B05379500A65687 /* MessageTableViewCell.swift */; };
+		5DF0CA752B05379500A65687 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF0CA732B05379500A65687 /* MessageTableViewCell.xib */; };
+		5DF6F40F2B05A65E00A97F27 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6F40E2B05A65E00A97F27 /* Date.swift */; };
 		5DFFF55A2B0216C900D1A2AC /* AppInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF5592B0216C900D1A2AC /* AppInjection.swift */; };
 		5DFFF55C2B02174900D1A2AC /* BankAccountRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */; };
 		5DFFF55E2B02175400D1A2AC /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */; };
@@ -127,6 +130,9 @@
 		5DF0CA6B2B051F0F00A65687 /* PromoDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoDetailRouter.swift; sourceTree = "<group>"; };
 		5DF0CA6D2B05202900A65687 /* PromoDetailInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoDetailInjection.swift; sourceTree = "<group>"; };
 		5DF0CA6F2B0532BC00A65687 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5DF0CA722B05379500A65687 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		5DF0CA732B05379500A65687 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		5DF6F40E2B05A65E00A97F27 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5DFFF5592B0216C900D1A2AC /* AppInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjection.swift; sourceTree = "<group>"; };
 		5DFFF55B2B02174900D1A2AC /* BankAccountRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountRouter.swift; sourceTree = "<group>"; };
 		5DFFF55D2B02175400D1A2AC /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				5D8BB9F52B03234900825557 /* UINavigationController.swift */,
 				5D672A052B04FC4500CA3D99 /* UIView.swift */,
 				5DF0CA6F2B0532BC00A65687 /* UIViewController.swift */,
+				5DF6F40E2B05A65E00A97F27 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,6 +324,15 @@
 				5DF0CA622B051BCF00A65687 /* PromoDetailViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5DF0CA712B05378300A65687 /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0CA722B05379500A65687 /* MessageTableViewCell.swift */,
+				5DF0CA732B05379500A65687 /* MessageTableViewCell.xib */,
+			);
+			path = MessageCell;
 			sourceTree = "<group>";
 		};
 		5DFFF54C2B02152200D1A2AC /* Data */ = {
@@ -360,12 +376,12 @@
 		5DFFF5502B02153D00D1A2AC /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				5D6729E72B04D19D00CA3D99 /* Promo */,
-				5DF0CA5F2B051B9900A65687 /* PromoDetail */,
 				5DFFF5632B021A9600D1A2AC /* TabBar */,
 				5DFFF5532B02156300D1A2AC /* BankAccount */,
 				5DDD72F22B02927700FA3A85 /* Payment */,
 				5DA78C2B2B035590006C8731 /* Transaction */,
+				5D6729E72B04D19D00CA3D99 /* Promo */,
+				5DF0CA5F2B051B9900A65687 /* PromoDetail */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -473,6 +489,7 @@
 		5DFFF5832B02534B00D1A2AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5DF0CA712B05378300A65687 /* MessageCell */,
 				5DB1EE672B04AEC30025C2CA /* HistoryCell */,
 				5DFFF5862B02560100D1A2AC /* BalanceCell */,
 				5DFFF5682B021DF400D1A2AC /* BankAccountViewController.xib */,
@@ -567,6 +584,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DB1EE6B2B04AED40025C2CA /* HistoryCellTableViewCell.xib in Resources */,
+				5DF0CA752B05379500A65687 /* MessageTableViewCell.xib in Resources */,
 				5D2668E92B0211B800DA51BC /* Assets.xcassets in Resources */,
 				5DF0CA5E2B05177500A65687 /* Launch.storyboard in Resources */,
 				5D672A042B04F79000CA3D99 /* PromoTableViewCell.xib in Resources */,
@@ -661,6 +679,7 @@
 				5DB1EE5D2B046ED00025C2CA /* TransactionDataSource.swift in Sources */,
 				5DFFF5722B02231D00D1A2AC /* BankAccountInteractor.swift in Sources */,
 				5DA78C2D2B03559F006C8731 /* TransactionViewController.swift in Sources */,
+				5DF0CA742B05379500A65687 /* MessageTableViewCell.swift in Sources */,
 				5DFFF5892B02562600D1A2AC /* BalanceTableViewCell.swift in Sources */,
 				5D6729FF2B04F56900CA3D99 /* PromoRepository.swift in Sources */,
 				5DFFF5602B02176000D1A2AC /* BankAccountPresenter.swift in Sources */,
@@ -679,6 +698,7 @@
 				5DDD72F62B0293DA00FA3A85 /* Constant.swift in Sources */,
 				5D8BB9EE2B02F1AE00825557 /* PaymentProtocols.swift in Sources */,
 				5D8BB9F42B02F93600825557 /* PaymentInjection.swift in Sources */,
+				5DF6F40F2B05A65E00A97F27 /* Date.swift in Sources */,
 				5DFFF5652B021ACB00D1A2AC /* HomeTabBarController.swift in Sources */,
 				5DFFF5812B022C8600D1A2AC /* BankAccountModel.swift in Sources */,
 				5DB1EE572B03C9410025C2CA /* TransactionProtocols.swift in Sources */,

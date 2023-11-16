@@ -52,8 +52,10 @@ struct DefaultTransactionDataSource: TransactionDataSource {
     
     func getTransactionList() -> Future<[TransactionModel], Never> {
         return Future<[TransactionModel], Never> { promise in
-            let transaction = Array(realm!.objects(TransactionModel.self))
-            promise(.success(transaction))
+            let transaction = realm?.objects(TransactionModel.self)
+            guard let trans = transaction else { return }
+            let transArray = Array(trans)
+            promise(.success(transArray))
         }
     }
 }

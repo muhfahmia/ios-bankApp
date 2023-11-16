@@ -21,12 +21,6 @@ class PromoViewController: UIViewController, UITableViewDataSource, UITableViewD
         presenter?.viewDidLoad()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.title = "Promo"
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//    }
-    
     private func setupUI() {
         tblPromo.delegate = self
         tblPromo.dataSource = self

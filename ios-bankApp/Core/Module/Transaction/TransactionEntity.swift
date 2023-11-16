@@ -10,4 +10,5 @@ protocol TransactionEntity {
     var bankName: String? { get }
     var merchant: String? { get }
     var amount: Double? { get }
+    var paymentDate: String? { get }
 }

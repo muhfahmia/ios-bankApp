@@ -14,6 +14,7 @@ class TransactionModel: Object, TransactionEntity {
     @Persisted var bankName: String?
     @Persisted var merchant: String?
     @Persisted var amount: Double?
+    @Persisted var paymentDate: String? = Date().string(withFormat: "Y-MM-dd HH:mm")
     
     override class func primaryKey() -> String? {
         return "transModelID"

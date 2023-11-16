@@ -16,6 +16,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     enum TableSection: Int, CaseIterable {
         case balanceCell
         case historyCell
+        case messageCell
     }
     
     var presenter: BankAccountViewToPresenter?
@@ -46,6 +47,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
         tblView.delegate = self
         tblView.register(nibWithCellClass: BalanceTableViewCell.self)
         tblView.register(nibWithCellClass: HistoryCellTableViewCell.self)
+        tblView.register(nibWithCellClass: MessageTableViewCell.self)
     }
     
     func onFetchSuccess() {
@@ -67,6 +69,8 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
             return 1
         case .historyCell:
             return presenter?.transaction?.count ?? 0
+        case .messageCell:
+            return 0
         case .none:
             return 0
         }
@@ -79,6 +83,8 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
             return presenter?.balanceCell(tableView: tableView, vc: self) ?? UITableViewCell()
         case .historyCell:
             return presenter?.historyCell(tableView: tableView, indexPath: indexPath, vc: self) ?? UITableViewCell()
+        case .messageCell:
+            return presenter?.messageCell(tableView: tableView) ?? UITableViewCell()
         case .none:
             return UITableViewCell()
         }

@@ -14,6 +14,7 @@ protocol BankAccountViewToPresenter {
     var transaction: [TransactionEntity]? { get set }
     func balanceCell(tableView: UITableView, vc: UIViewController) -> UITableViewCell
     func historyCell(tableView: UITableView, indexPath: IndexPath, vc: UIViewController) -> UITableViewCell
+    func messageCell(tableView: UITableView) -> UITableViewCell
     func viewDidLoad()
     func viewWillAppear()
 }

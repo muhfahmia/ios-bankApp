@@ -41,6 +41,12 @@ class BankAccountPresenter: BankAccountViewToPresenter {
         cell.transID.text = trans?.transID
         cell.merchant.text = trans?.merchant
         cell.amount.text = String().rupiahFormat(from: trans?.amount ?? 0)
+        cell.paymentDate.text = trans?.paymentDate
+        return cell
+    }
+    
+    func messageCell(tableView: UITableView) -> UITableViewCell {
+        let cell: MessageTableViewCell = tableView.dequeueReusableCell(withClass: MessageTableViewCell.self)
         return cell
     }
     
