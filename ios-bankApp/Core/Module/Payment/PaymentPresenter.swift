@@ -20,7 +20,7 @@ class PaymentPresenter: PaymentViewToPresenter {
     
     func doPay(vc: UIViewController, payload: String) {
         let payloads = payload.components(separatedBy: ".")
-        guard payloads.count > 3 && payloads.endIndex == 3 else {
+        guard payloads.count == 4 else {
             print("Payload incorrect: \(payloads.count)")
             return
         }
