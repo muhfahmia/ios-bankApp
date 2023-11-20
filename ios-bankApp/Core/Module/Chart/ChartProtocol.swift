@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Combine
+import Domain
 
 protocol ChartViewToPresenter {
     var view: ChartPresenterToView? { get set }

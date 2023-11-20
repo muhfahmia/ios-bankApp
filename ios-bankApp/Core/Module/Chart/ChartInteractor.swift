@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import Domain
 
 class ChartInteractor: ChartPresenterToInteractor {
     private let donutUseCase: DonutUseCase

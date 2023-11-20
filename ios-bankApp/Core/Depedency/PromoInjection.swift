@@ -5,6 +5,9 @@
 //  Created by Muhammad Fahmi on 15/11/23.
 //
 
+import Domain
+import Data
+
 protocol PromoInjection {
     func resolve() -> PromoViewController
     func resolve() -> PromoPresenter

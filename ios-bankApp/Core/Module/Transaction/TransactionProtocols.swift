@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Domain
 
 protocol TransactionViewToPresenter {
     var view: TransactionPresenterToView? { get set }

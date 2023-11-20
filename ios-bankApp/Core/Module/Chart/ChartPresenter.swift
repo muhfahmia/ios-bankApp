@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Domain
 
 class ChartPresenter: ChartViewToPresenter {
     var view: ChartPresenterToView?

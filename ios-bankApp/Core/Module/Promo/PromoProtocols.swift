@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 protocol PromoViewToPresenter {
     var view: PromoPresenterToView? { get set }

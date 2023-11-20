@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 class PromoDetailPresenter: PromoDetailViewToPresenter {
     var view: PromoDetailPresenterToView?

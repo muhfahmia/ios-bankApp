@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Domain
+import Data
 
 protocol ChartInjection {
     func resolve() -> ChartViewController

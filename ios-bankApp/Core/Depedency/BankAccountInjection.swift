@@ -6,6 +6,8 @@
 //
 import UIKit
 import RealmSwift
+import Domain
+import Data
 
 protocol BankAccountInjection {
     func resolve() -> BankAccountViewController

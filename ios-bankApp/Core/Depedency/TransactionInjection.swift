@@ -7,6 +7,8 @@
 
 import UIKit
 import RealmSwift
+import Domain
+import Data
 
 protocol TransactionInjection {
     func resolve(payload: String) -> TransactionViewController

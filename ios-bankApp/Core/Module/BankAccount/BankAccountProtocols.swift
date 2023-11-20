@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Domain
 
 protocol BankAccountViewToPresenter {
     var view: BankAccountPresenterToView? { get set}

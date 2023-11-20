@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Domain
 
 class BankAccountViewController: UIViewController, BankAccountPresenterToView, UITableViewDataSource, UITableViewDelegate {
     
