@@ -12,7 +12,7 @@ protocol BankAccountInjection {
     func resolve() -> BankAccountPresenter
     func resolve() -> BankAccountInteractor
     func resolve() -> BankAccountRouter
-    
+    func resolve() -> AccountUseCase
     func resolve() -> BankAccountRepository
     func resolve() -> BankAccountDataSource
 }
@@ -36,7 +36,11 @@ extension BankAccountInjection where Self: Injection {
     }
     
     func resolve() -> BankAccountInteractor {
-        return BankAccountInteractor(bankRepo: resolve(), transRepo: resolve())
+        return BankAccountInteractor(accountUseCase: resolve(), transUseCase: resolve())
+    }
+    
+    func resolve() -> AccountUseCase {
+        return AccountInteractor(repo: resolve())
     }
     
     func resolve() -> BankAccountRouter {

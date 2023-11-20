@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Combine
 
 class ChartPresenter: ChartViewToPresenter {
     var view: ChartPresenterToView?
@@ -15,7 +14,6 @@ class ChartPresenter: ChartViewToPresenter {
     var router: ChartRouter?
     
     var chartData: [ChartEntity]?
-    var store = Set<AnyCancellable>()
     
     func viewDidLoad() {
         interactor?.getDataChart()

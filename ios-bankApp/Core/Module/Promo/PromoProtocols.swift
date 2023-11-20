@@ -27,5 +27,5 @@ protocol PromoPresenterToInteractor {
 }
 
 protocol PromoInteractorToPresenter {
-    func fetchPromoSuccess(promo: [PromoModel])
+    func fetchPromoSuccess(promo: [PromoEntity])
 }

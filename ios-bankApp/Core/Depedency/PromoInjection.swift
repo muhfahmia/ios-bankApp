@@ -10,6 +10,7 @@ protocol PromoInjection {
     func resolve() -> PromoPresenter
     func resolve() -> PromoInteractor
     func resolve() -> PromoRouter
+    func resolve() -> PromoUseCase
     func resolve() -> PromoRepository
     func resolve() -> PromoDataSource
 }
@@ -33,11 +34,15 @@ extension PromoInjection where Self: Injection {
     }
     
     func resolve() -> PromoInteractor {
-        return PromoInteractor(promoRepo: resolve())
+        return PromoInteractor(promoUseCase: resolve())
     }
     
     func resolve() -> PromoRouter {
         return DefaultPromoRouter(injection: self)
+    }
+    
+    func resolve() -> PromoUseCase {
+        return PromoInteractorCase(promoRepo: resolve())
     }
     
     func resolve() -> PromoRepository {

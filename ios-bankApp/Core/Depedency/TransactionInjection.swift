@@ -12,8 +12,10 @@ protocol TransactionInjection {
     func resolve(payload: String) -> TransactionViewController
     func resolve() -> TransactionPresenter
     func resolve() -> TransactionRouter
+    func resolve() -> TransactionInteractor
     func resolve() -> TransactionRepository
     func resolve() -> TransactionDataSource
+    func resolve() -> TransactionUseCase
 }
 
 extension TransactionInjection where Self: Injection {
@@ -21,7 +23,7 @@ extension TransactionInjection where Self: Injection {
     func resolve(payload: String) -> TransactionViewController {
         let vc = TransactionViewController(payload: payload)
         let presenter: TransactionPresenter = self.resolve()
-        let interactor: TransactionInteractor = TransactionInteractor(transRepo: resolve())
+        let interactor: TransactionInteractor = self.resolve()
         vc.presenter = presenter
         vc.presenter?.view = vc
         vc.presenter?.interactor = interactor
@@ -35,6 +37,14 @@ extension TransactionInjection where Self: Injection {
     
     func resolve() -> TransactionPresenter {
         return TransactionPresenter()
+    }
+    
+    func resolve() -> TransactionInteractor {
+        return TransactionInteractor(transUseCase: resolve())
+    }
+    
+    func resolve() -> TransactionUseCase {
+        return TransactionCaseInteractor(transRepo: resolve())
     }
     
     func resolve() -> TransactionRepository {

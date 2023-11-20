@@ -16,11 +16,11 @@ struct DefaultPromoRepository: PromoRepository {
         self.promoSoruce = promoSource
     }
     
-    func getPromoList() -> Future<[PromoModel], Never> {
+    func getPromoList() -> Future<[PromoEntity], Never> {
         promoSoruce.getPromoFromSource()
     }
     
-    func getPromoDetail(promoID: String) -> Future<PromoModel, Never> {
+    func getPromoDetail(promoID: String) -> Future<PromoEntity, Never> {
         promoSoruce.getPromoDetailFromSource(promoID: promoID)
     }
     

@@ -21,15 +21,15 @@ class ChartViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Chart"
+        navigationController?.navigationBar.prefersLargeTitles = true
         setupTbl()
         presenter?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.title = "Chart"
         navigationController?.navigationBar.prefersLargeTitles = true
-//        setLargeTitleDisplayMode(.always)
     }
     
     private func setupTbl() {

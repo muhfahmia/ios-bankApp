@@ -13,7 +13,7 @@ class BankAccountPresenter: BankAccountViewToPresenter {
     var interactor: BankAccountPresenterToInteractor?
     var router: BankAccountRouter?
     
-    var bankAccount: BankAccount?
+    var bankAccount: BankAccountEntity?
     var transaction: [TransactionEntity]?
     
     func viewDidLoad() {
@@ -67,13 +67,13 @@ class BankAccountPresenter: BankAccountViewToPresenter {
 
 extension BankAccountPresenter: BankAccountInteractorToPresenter {
     
-    func fetchTransactionListSuccess(with trans: [TransactionModel]) {
+    func fetchTransactionListSuccess(with trans: [TransactionEntity]) {
         transaction = trans
         view?.onFetchSuccessTransactionList()
         
     }
     
-    func fetchBankAccountSuccess(with account: BankAccount) {
+    func fetchBankAccountSuccess(with account: BankAccountEntity) {
         bankAccount = account
         view?.onFetchSuccess()
     }

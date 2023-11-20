@@ -33,7 +33,7 @@ extension PromoDetailInjection where Self: Injection {
     }
     
     func resolve() -> PromoDetailInteractor {
-        return PromoDetailInteractor(promoRepo: resolve())
+        return PromoDetailInteractor(promoUseCase: resolve())
     }
     
     func resolve() -> PromoDetailRouter {

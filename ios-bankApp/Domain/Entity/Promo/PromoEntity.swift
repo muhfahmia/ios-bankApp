@@ -2,8 +2,10 @@
 //  PromoEntity.swift
 //  ios-bankApp
 //
-//  Created by Muhammad Fahmi on 15/11/23.
+//  Created by Muhammad Fahmi on 20/11/23.
 //
+
+import Foundation
 
 protocol PromoEntity {
     var promoID: String? { get }

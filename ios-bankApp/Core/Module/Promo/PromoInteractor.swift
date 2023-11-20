@@ -10,17 +10,17 @@ import Foundation
 
 class PromoInteractor: PromoPresenterToInteractor {
     
-    private let promoRepo: PromoRepository
+    private let promoUseCase: PromoUseCase
     var presenter: PromoInteractorToPresenter?
     
     var store = Set<AnyCancellable>()
     
-    init(promoRepo: PromoRepository) {
-        self.promoRepo = promoRepo
+    init(promoUseCase: PromoUseCase) {
+        self.promoUseCase = promoUseCase
     }
     
     func fetchPromo() {
-        promoRepo.getPromoList()
+        promoUseCase.list()
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] value in
                 self?.presenter?.fetchPromoSuccess(promo: value)

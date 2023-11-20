@@ -10,8 +10,8 @@ import Combine
 
 protocol TransactionDataSource {
     func addTransaction(payload: String) -> Future<Bool, Never>
-    func getTransactionPayload(payload: String) -> Future<TransactionModel, Never>
-    func getTransactionList() -> Future<[TransactionModel], Never>
+    func getTransactionPayload(payload: String) -> Future<TransactionEntity, Never>
+    func getTransactionList() -> Future<[TransactionEntity], Never>
 }
 
 struct DefaultTransactionDataSource: TransactionDataSource {
@@ -42,16 +42,16 @@ struct DefaultTransactionDataSource: TransactionDataSource {
         }
     }
     
-    func getTransactionPayload(payload: String) -> Future<TransactionModel, Never> {
-        return Future<TransactionModel, Never> { promise in
+    func getTransactionPayload(payload: String) -> Future<TransactionEntity, Never> {
+        return Future<TransactionEntity, Never> { promise in
             let transaction = TransactionModel()
             transaction.mappingPayloadToModel(payload: payload)
             promise(.success(transaction))
         }
     }
     
-    func getTransactionList() -> Future<[TransactionModel], Never> {
-        return Future<[TransactionModel], Never> { promise in
+    func getTransactionList() -> Future<[TransactionEntity], Never> {
+        return Future<[TransactionEntity], Never> { promise in
             let transaction = realm?.objects(TransactionModel.self)
             guard let trans = transaction else { return }
             let transArray = Array(trans)

@@ -9,6 +9,6 @@ import Combine
 
 protocol TransactionRepository {
     func addTransaction(payload: String) -> Future<Bool, Never>
-    func getTransactionPayload(payload: String) -> Future<TransactionModel, Never>
-    func getTransactionList() -> Future<[TransactionModel], Never>
+    func getTransactionPayload(payload: String) -> Future<TransactionEntity, Never>
+    func getTransactionList() -> Future<[TransactionEntity], Never>
 }

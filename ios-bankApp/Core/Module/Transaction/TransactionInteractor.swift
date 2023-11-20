@@ -11,15 +11,15 @@ import Foundation
 class TransactionInteractor: TransactionPresenterToInteractor {
     
     var presenter: TransactionInteractorToPresenter?
-    private let transRepo: TransactionRepository
+    private let transUseCase: TransactionUseCase
     var store = Set<AnyCancellable>()
     
-    init(transRepo: TransactionRepository) {
-        self.transRepo = transRepo
+    init(transUseCase: TransactionUseCase) {
+        self.transUseCase = transUseCase
     }
     
     func addTransaction(payload: String) {
-        transRepo.addTransaction(payload: payload)
+        transUseCase.add(payload: payload)
         .receive(on: RunLoop.main)
         .sink(receiveCompletion: { _ in
         }, receiveValue: { [weak self] value in
@@ -28,7 +28,7 @@ class TransactionInteractor: TransactionPresenterToInteractor {
     }
     
     func getTransactionPayload(payload: String) {
-        transRepo.getTransactionPayload(payload: payload)
+        transUseCase.getPayload(payload: payload)
         .receive(on: RunLoop.main)
         .sink(receiveCompletion: { _ in
         }, receiveValue: { value in

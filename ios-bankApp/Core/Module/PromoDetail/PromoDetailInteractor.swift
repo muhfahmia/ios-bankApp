@@ -10,16 +10,16 @@ import Combine
 
 class PromoDetailInteractor: PromoDetailPresenterToInteractor {
     
-    private let promoRepo: PromoRepository
+    private let promoUseCase: PromoUseCase
     var presenter: PromoDetailInteractorToPresenter?
     var store = Set<AnyCancellable>()
 
-    init(promoRepo: PromoRepository) {
-        self.promoRepo = promoRepo
+    init(promoUseCase: PromoUseCase) {
+        self.promoUseCase = promoUseCase
     }
     
     func fetchDetail(promoID: String) {
-        promoRepo.getPromoDetail(promoID: promoID)
+        promoUseCase.detail(promoID: promoID)
         .receive(on: RunLoop.main)
         .sink(receiveValue: { [weak self] value in
             self?.presenter?.fetchDetailSuccess(promo: value)

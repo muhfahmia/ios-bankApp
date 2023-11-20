@@ -20,11 +20,11 @@ struct DefaultTransactionRepository: TransactionRepository {
         transDataSource.addTransaction(payload: payload)
     }
     
-    func getTransactionPayload(payload: String) -> Future<TransactionModel, Never> {
+    func getTransactionPayload(payload: String) -> Future<TransactionEntity, Never> {
         transDataSource.getTransactionPayload(payload: payload)
     }
     
-    func getTransactionList() -> Future<[TransactionModel], Never> {
+    func getTransactionList() -> Future<[TransactionEntity], Never> {
         transDataSource.getTransactionList()
     }
     

@@ -8,6 +8,6 @@
 import Combine
 
 protocol PromoRepository {
-    func getPromoList() -> Future<[PromoModel], Never>
-    func getPromoDetail(promoID: String) -> Future<PromoModel, Never>
+    func getPromoList() -> Future<[PromoEntity], Never>
+    func getPromoDetail(promoID: String) -> Future<PromoEntity, Never>
 }

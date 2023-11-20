@@ -16,7 +16,7 @@ struct DefaultBankAccount: BankAccountRepository {
         self.bankAccountSource = bankAccountSource
     }
     
-    func getAccount() -> Future<BankAccountModel, Never> {
+    func getAccount() -> Future<BankAccountEntity, Never> {
         return bankAccountSource.getAccount()
     }
     

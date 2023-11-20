@@ -35,7 +35,7 @@ class PromoPresenter: PromoViewToPresenter {
 }
 
 extension PromoPresenter: PromoInteractorToPresenter {
-    func fetchPromoSuccess(promo: [PromoModel]) {
+    func fetchPromoSuccess(promo: [PromoEntity]) {
         promoEntity = promo
         view?.updatePromoSuccess()
     }

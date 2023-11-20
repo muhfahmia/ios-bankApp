@@ -26,14 +26,13 @@ protocol BankAccountPresenterToView {
 }
 
 protocol BankAccountInteractorToPresenter {
-    func fetchTransactionListSuccess(with trans: [TransactionModel])
-    func fetchBankAccountSuccess(with account: BankAccount)
+    func fetchTransactionListSuccess(with trans: [TransactionEntity])
+    func fetchBankAccountSuccess(with account: BankAccountEntity)
     func fetchBankAccountFailure(with error: String)
 }
 
 protocol BankAccountPresenterToInteractor {
     var presenter: BankAccountInteractorToPresenter? { get set }
     func getBankAccount()
-    func addBankAccount()
     func getListTransaction()
 }

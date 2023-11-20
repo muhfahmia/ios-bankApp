@@ -21,7 +21,7 @@ class BankAccountViewController: UIViewController, BankAccountPresenterToView, U
     }
     
     var presenter: BankAccountViewToPresenter?
-    var bankAccount: BankAccount?
+    var bankAccount: BankAccountEntity?
     
     init() {
         super.init(nibName: String(describing: BankAccountViewController.self), bundle: nil)
