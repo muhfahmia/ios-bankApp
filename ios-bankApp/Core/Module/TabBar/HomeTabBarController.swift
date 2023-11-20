@@ -32,7 +32,8 @@ class HomeTabBarController: UITabBarController {
 
         let bankTab = createTabController(vc: router.bankAccountVC, image: setImageTab(imageSystem: "banknote.fill"), title: "Home")
         let promoTab = createTabController(vc: router.promoVC, image: setImageTab(imageSystem: "giftcard.fill"), title: "Promo")
-        setViewControllers([bankTab, promoTab], animated: true)
+        let chartTab = createTabController(vc: router.chartVC, image: setImageTab(imageSystem: "chart.pie.fill"), title: "Chart")
+        setViewControllers([bankTab, promoTab, chartTab], animated: true)
     }
     
     private func createTabController(vc: UIViewController, image: UIImage, title: String) -> UINavigationController {

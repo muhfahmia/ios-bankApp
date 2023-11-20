@@ -20,7 +20,6 @@ class PromoInteractor: PromoPresenterToInteractor {
     }
     
     func fetchPromo() {
-        print("fetchPromoInteractor")
         promoRepo.getPromoList()
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] value in

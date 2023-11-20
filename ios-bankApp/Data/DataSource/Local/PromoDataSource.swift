@@ -26,5 +26,4 @@ struct DefaultPromoDataSource: PromoDataSource {
             promise(.success(promo))
         }
     }
-    
 }

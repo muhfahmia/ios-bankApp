@@ -6,7 +6,7 @@
 //
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func setLargeTitleDisplayMode(_ largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode) {
         switch largeTitleDisplayMode {
         case .automatic:

@@ -11,6 +11,7 @@ protocol HomeRouter {
     func appRoute(window: UIWindow?)
     var bankAccountVC: BankAccountViewController { get }
     var promoVC: PromoViewController { get }
+    var chartVC: ChartViewController { get }
 }
 
 struct DefaultHomeRouter: HomeRouter {
@@ -26,6 +27,10 @@ struct DefaultHomeRouter: HomeRouter {
     }
     
     var promoVC: PromoViewController {
+        injection.resolve()
+    }
+    
+    var chartVC: ChartViewController {
         injection.resolve()
     }
     

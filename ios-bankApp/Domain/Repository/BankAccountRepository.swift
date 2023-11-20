@@ -11,21 +11,3 @@ protocol BankAccountRepository {
     func getAccount() -> Future<BankAccountModel, Never>
     func addAccount() -> Future<Bool, Error>
 }
-
-struct DefaultBankAccount: BankAccountRepository {
-    
-    private let bankAccountSource: BankAccountDataSource
-    
-    init(bankAccountSource: BankAccountDataSource) {
-        self.bankAccountSource = bankAccountSource
-    }
-    
-    func getAccount() -> Future<BankAccountModel, Never> {
-        return bankAccountSource.getAccount()
-    }
-    
-    func addAccount() -> Future<Bool, Error> {
-        return bankAccountSource.addAccount()
-    }
-    
-}

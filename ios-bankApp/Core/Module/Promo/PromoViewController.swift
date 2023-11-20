@@ -40,7 +40,6 @@ class PromoViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func updatePromoSuccess() {
-        print("update success")
         tblPromo.reloadData()
     }
 }
