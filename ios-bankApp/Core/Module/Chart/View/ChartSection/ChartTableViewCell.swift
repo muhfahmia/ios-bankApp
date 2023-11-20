@@ -13,7 +13,6 @@ class ChartTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupChart()
         // Initialization code
     }
 
@@ -23,10 +22,9 @@ class ChartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    private func setupChart() {
-        donutChart.backgroundColor = .white
-        donutChart.dataValues = [30, 55, 15] // Example data values for the donut chart slices
-        donutChart.colors = [.red, .green, .blue]
+    func setupData(chartData: [ChartEntity]) {
+        donutChart.setupDataChart(chartData: chartData)
+        donutChart.setNeedsDisplay()
     }
     
 }

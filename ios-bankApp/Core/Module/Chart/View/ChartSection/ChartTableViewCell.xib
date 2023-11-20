@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVh-8N-s7B" customClass="DonutChartView" customModule="ios_bankApp" customModuleProvider="target">
-                        <rect key="frame" x="12" y="12" width="391" height="273.66666666666669"/>
+                        <rect key="frame" x="12" y="14.333333333333343" width="391" height="273.66666666666663"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="jVh-8N-s7B" secondAttribute="height" multiplier="1:0.7" id="NER-g4-1c9"/>
@@ -27,8 +27,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="jVh-8N-s7B" secondAttribute="trailing" constant="12" id="6Fo-EW-f2i"/>
-                    <constraint firstAttribute="bottom" secondItem="jVh-8N-s7B" secondAttribute="bottom" priority="250" constant="12" id="Xcr-CC-P8I"/>
-                    <constraint firstItem="jVh-8N-s7B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="fSA-HS-D0m"/>
+                    <constraint firstAttribute="bottom" secondItem="jVh-8N-s7B" secondAttribute="bottom" constant="12" id="Xcr-CC-P8I"/>
+                    <constraint firstItem="jVh-8N-s7B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="250" constant="12" id="fSA-HS-D0m"/>
                     <constraint firstItem="jVh-8N-s7B" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="y9W-HT-BzR"/>
                 </constraints>
             </tableViewCellContentView>

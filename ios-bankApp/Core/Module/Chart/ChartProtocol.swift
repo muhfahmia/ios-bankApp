@@ -7,11 +7,13 @@
 
 import Foundation
 import UIKit
+import Combine
 
 protocol ChartViewToPresenter {
     var view: ChartPresenterToView? { get set }
     var interactor: ChartPresenterToInteractor? { get set }
     var router: ChartRouter? { get set }
+    var chartData: [ChartEntity]? { get set }
     func viewDidLoad()
     func chartCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func infoCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
@@ -28,7 +30,8 @@ protocol ChartPresenterToInteractor {
 }
 
 protocol ChartInteractorToPresenter {
-    func fetchChartSuccess(with chart: [ChartEntity])
+    var chartData: [ChartEntity]? { get set }
+    func fetchChartSuccess()
     func fetchChartFailed()
 }
 

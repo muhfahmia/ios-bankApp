@@ -38,4 +38,12 @@ class DonutChartView: UIView {
             startAngle = endAngle
         }
     }
+    
+    func setupDataChart(chartData: [ChartEntity]) {
+        for chartDatum in chartData {
+            dataValues.append(chartDatum.percentage ?? 0)
+            colors.append(chartDatum.color ?? UIColor.systemRed)
+        }
+    }
+    
 }

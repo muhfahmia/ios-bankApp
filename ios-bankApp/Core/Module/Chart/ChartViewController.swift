@@ -29,7 +29,7 @@ class ChartViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewWillAppear(animated)
         self.title = "Chart"
         navigationController?.navigationBar.prefersLargeTitles = true
-        setLargeTitleDisplayMode(.always)
+//        setLargeTitleDisplayMode(.always)
     }
     
     private func setupTbl() {
@@ -40,6 +40,7 @@ class ChartViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func onFetchSuccess() {
+        tblChart.reloadData()
         print("success view")
     }
     
@@ -57,7 +58,7 @@ class ChartViewController: UIViewController, UITableViewDataSource, UITableViewD
         case .chartSection:
             return 1
         case .infoSection:
-            return 4
+            return presenter?.chartData?.count ?? 0
         case .none:
             return 0
         }

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class ChartInteractor: ChartPresenterToInteractor {
-    
     private let donutUseCase: DonutUseCase
     var presenter: ChartInteractorToPresenter?
     var store = Set<AnyCancellable>()
@@ -21,9 +20,13 @@ class ChartInteractor: ChartPresenterToInteractor {
     func getDataChart() {
         donutUseCase.list()
         .receive(on: RunLoop.main)
-        .sink(receiveValue: { [weak self] value in
-            self?.presenter?.fetchChartSuccess(with: value)
+        .sink(receiveCompletion: { [weak self] completion in
+            switch completion {
+            case .finished:
+                self?.presenter?.fetchChartSuccess()
+            }
+        },receiveValue: { [weak self] value in
+            self?.presenter?.chartData = value
         }).store(in: &store)
-        
     }
 }
